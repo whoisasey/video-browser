@@ -17,8 +17,8 @@ import SearchBar from './components/SearchBar';
 import VideoList from './components/VideoList';
 import VideoDetail from './components/VideoDetail';
 
-// const API_KEY = 'AIzaSyBp6Kf8Ns8lh-AjdT85Di-pWSDUfOWCxs4';
-const API_KEY = 'AIzaSyDTIdqZUEvOta31aY6hc-3RkcON9EDNsKE';
+const API_KEY = 'AIzaSyBI_j3UWbAgKf60eduUh5lK6CroT6Pyjt8';
+
 
 export default {
 	name: 'App',
@@ -30,10 +30,9 @@ export default {
 		data() {
 			return {  
 				videos: [],
-				selectedVideo: null
+				selectedVideo: null,
 				}
 		},
-	
 	methods: {
 	onTermChange(searchTerm) {
       axios.get('https://www.googleapis.com/youtube/v3/search', {
@@ -45,7 +44,6 @@ export default {
           }
         })
         .then(response => {
-					// console.log(response)
           this.videos = response.data.items;
         });
 		},
